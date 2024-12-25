@@ -1,0 +1,5 @@
+package com.sathya.springbootmvc.employeeRepositry;
+
+public interface EmployeeRepositry {
+
+}

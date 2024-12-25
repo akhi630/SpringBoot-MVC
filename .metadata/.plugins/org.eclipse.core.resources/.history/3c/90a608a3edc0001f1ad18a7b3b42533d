@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>product details</title>
+	</head>
+	<body>
+	<form th:action="@{/editproductsave}" method="post">
+		<h1 style="color: blue;">Edit product information</h1>
+	<label>name</label>
+	<input type="text" name="name">
+	<br><br>
+	<label>brand</label>
+     <input type="text" name="brand">
+	 <br><br>
+	 <label>madeIn</label>
+	 <input type="text" name="madeIn">
+	 <br><br>
+	 <label>price</label>
+	 <input type="text" name="price">
+	 <br><br>
+	 <label>Quantity</label>
+	 <input type="text" name="Quantity">
+	 <br><br>
+	 <label>discountrate</label>
+	 <input type="text" name="discountrate">
+	 <br> <br>
+	 <label>taxrate</label>
+	 <input type="text" name="taxrate">
+	 <br><br>
+	 <button type="submit">save product</button>
+	 <button type="submit">Reset</button>	
+</form> 	
+	</body>	
+</html>

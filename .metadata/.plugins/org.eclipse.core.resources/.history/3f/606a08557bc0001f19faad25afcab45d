@@ -1,0 +1,89 @@
+package com.sathya.springbootmvc.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sathya.springbootmvc.Model.EmployeeModel;
+import com.sathya.springbootmvc.employeeEntity.EmployeeEntity;
+import com.sathya.springbootmvc.employeeRepositry.EmployeeRepositry;
+import com.sathya.springbootmvc.entity.Productentity;
+import com.sathya.springbootmvc.repository.Productrepository;
+
+public class EmployeeService {
+	@Autowired
+	EmployeeRepositry employeeRepositry;
+	
+		
+	public EmployeeEntity searchbyid(Long id)
+	{
+		Optional <EmployeeEntity>optionalData=EmployeeRepositry.finById(id);
+		if(optionalData.isPresent())
+		{
+			EmployeeEntity employee= optionalData.get();
+			return employee;
+	}
+		else
+		{
+			return null;
+		}
+		
+	}
+	
+	
+
+	
+	public void deleteemployeebyid(Long id)
+	{
+		employeeRepositry.deleteById(id);
+	}
+	public List<EmployeeEntity> getAllEmployee()
+	{
+		List<EmployeeEntity> employees= employeeRepositry.findAll();
+		return employees;
+	}
+	
+	
+	
+	
+public void saveEmployeeDetails(EmployeeModel employeeModel)
+{
+	double allowance;
+	double bonus;
+	double medicalinsurence;
+	double basicsalary;
+	double monthlysalary;
+	
+	if(employeeModel.getSalary()<=350000)
+	{
+		bonus=20000;
+		allowance=1000;
+		medicalinsurence=40000;
+		basicsalary=employeeModel.getSalary()-bonus-allowance-medicalinsurence;
+	}
+	else
+	{
+		bonus=100000;
+		allowance=7000;
+		medicalinsurence=700000;
+		basicsalary=employeeModel.getSalary()-bonus-allowance-medicalinsurence;
+	}
+	monthlysalary=(int)employeeModel.getSalary()/12;
+	EmployeeEntity employeeEntity=new EmployeeEntity();
+	employeeEntity.setName(employeeModel.getName());
+	employeeEntity.setAge(employeeModel.getAge());
+	employeeEntity.setDepartment(employeeModel.getDepartment());
+	employeeEntity.setSalary(employeeModel.getSalary());
+	employeeEntity.setLocation(employeeModel.getLocation());
+	employeeEntity.setGender(employeeModel.getGender());
+	employeeEntity.setMonthsalary(monthlysalary);
+	employeeEntity.setBasicsalary(basicsalary);
+	employeeEntity.setAllowance(allowance);
+	employeeEntity.setBonus(bonus);
+	employeeEntity.setMedicalinsurance(medicalinsurence);
+	employeeRepositry.save(employeeEntity);
+	
+	}
+	}
+

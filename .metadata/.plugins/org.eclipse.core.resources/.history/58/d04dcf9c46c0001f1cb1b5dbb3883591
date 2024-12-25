@@ -1,0 +1,35 @@
+package com.sathya.springbootmvc.Service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sathya.springbootmvc.employeeEntity.EmployeeEntity;
+import com.sathya.springbootmvc.employeeRepositry.EmployeeRepositry;
+
+public class EmployeeService {
+	@Autowired
+	EmployeeRepositry employeeRepositry=EmployeeRepositry.findAll();
+	
+	return employees;
+}
+public void saveEmployeeDetails(Employee employeeModel)
+{
+	double hra;
+	hra=employeeModel.getHraper()*employeeModel.getSalary();
+	double da;
+	da=employeeModel.getDaper()*employeeModel.getSalary();
+	double finalsalary;
+	finalsalary=hra+da;
+	EmployeeEntity employeeEntity=new EmployeeEntity();
+	employeeEntity.setName(employeeModel.getName());
+	employeeEntity.setDept(employeeModel.getDept());
+	employeeEntity.setGender(employeeModel.getGender());
+	employeeEntity.setLocation(employeeModel.getLocation());
+	EmployeeEntity.setDa(da);
+	EmployeeEntity.setHra(hra);
+	EmployeeEntity.setFinalSalary(finalsalary);
+	EmployeeEntity.setSalary(employeeModel.getSalary());
+	
+	employeerepositry.save(employeeEntity);
+	
+}
+}

@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>employee detailes</title>
+	</head>
+	<body>
+		<h1>Employee form</h1>
+		<form th:action = "@{/saveemployee}" method="post">
+			<label>name</label>
+				<input type="text" name="name" required>
+				<br><br>
+				 <label>age</label>
+				 <input type="text" name="age" required>
+				 <br><br>
+				 <label>department</label>
+				 <input type="text" name="department" required>
+				 <br><br>
+				 <label>salary</label>
+				 <input type="text" name="salary" required>
+				 <br><br>
+				 <label>Location</label>
+				 <input type="text" name="location" required>
+				 <br><br>
+				 <label>gender</label>
+				 <input type="text" name="gender" required>
+				 <br><br>
+				 <button type="submit">save</button>
+				 <button type="reset">Reset</button>	
+			</form> 	
+		</body>	
+	</html>
+		

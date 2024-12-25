@@ -1,0 +1,24 @@
+package com.sathya.springbootmvc.model;
+
+
+
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Productmodel {
+	
+	private long id;
+	@NotBlank(message = "product name cannot be blank")
+    private String name;
+    private String brand;
+    private String madeIn;
+    private double price;
+    private int Quantity;
+    private double discountrate; 
+    private double taxrate;
+}

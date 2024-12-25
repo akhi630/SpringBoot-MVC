@@ -1,0 +1,2 @@
+spring.application.name=sathya.employee.springboot
+server.port=2000

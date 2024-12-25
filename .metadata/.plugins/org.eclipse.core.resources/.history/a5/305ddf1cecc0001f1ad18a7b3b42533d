@@ -1,0 +1,91 @@
+package com.sathya.springbootmvc.service;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import org.springframework.stereotype.Service;
+
+import com.sathya.springbootmvc.entity.Productentity;
+import com.sathya.springbootmvc.model.Productmodel;
+import com.sathya.springbootmvc.repository.Productrepository;
+@Service
+public class Productservice {
+	@Autowired	
+	Productrepository productrepository;
+	
+	public void daleteproductbyid(Long id) 
+	{
+		productrepository.deleteById(id);
+	}
+	
+	
+	public List <Productentity>getAllProducts()
+	{
+		 List <Productentity> products=productrepository.findAll();
+		 return products;
+		}
+	
+	
+	
+	
+	public Productentity searchbyid(Long id)
+	{
+		Optional<Productentity> optionalData=productrepository.findById(id);
+		if(optionalData.isPresent())
+		{
+			Productentity product=optionalData.get();
+			return product;
+		}
+		else
+		{
+			return null;
+		}
+	}
+		
+	
+
+
+	public void saveproductdetails(Productmodel productmodel)
+	{
+		double stockvalue;
+		stockvalue=productmodel.getPrice() * productmodel.getQuantity();
+		double discountprice;
+		discountprice=productmodel.getPrice() * productmodel.getDiscountrate()/100;
+		double offerprice;
+		offerprice=productmodel.getPrice()-discountprice;
+		double finalprice;
+		finalprice=offerprice+productmodel.getTaxrate();
+		
+		Productentity Productentity=new Productentity();
+		Productentity.setName(productmodel.getName());
+		Productentity.setBrand(productmodel.getBrand());
+		Productentity.setMadeIn(productmodel.getMadeIn());
+		Productentity.setPrice(productmodel.getPrice());
+		Productentity.setQuantity(productmodel.getQuantity());
+		Productentity.setDiscountrate(productmodel.getDiscountrate());
+		Productentity.setTaxrate(productmodel.getTaxrate());
+		Productentity.setOfferprice(offerprice);
+		Productentity.setFinalprice(finalprice);
+		Productentity.setStockvalue(stockvalue);
+		Productentity.setDiscountprice(discountprice);
+		
+		productrepository.save(Productentity);
+		
+	}
+
+
+	public void editById(Long id)
+	{
+		List<Productentity> product =productrepository.findById(id);
+		
+		
+	}
+
+
+	
+
+}
+
+

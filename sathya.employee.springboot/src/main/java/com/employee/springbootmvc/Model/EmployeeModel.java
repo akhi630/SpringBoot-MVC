@@ -1,0 +1,25 @@
+package com.employee.springbootmvc.Model;
+
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+	public class EmployeeModel {
+	    
+		private String name;
+		private int age;
+		private String department;
+		private double salary;
+		private String location;
+		private String gender;
+		
+
+	}
+
+
+

@@ -1,0 +1,24 @@
+package com.sathya.springbootmvc.Model;
+
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+	public class EmployeeModel {
+		private String name;
+		private String dept;
+		private double salary;
+		private char gender;
+		private String location;
+		private double hraper;
+		private double daper;
+
+	}
+
+
+

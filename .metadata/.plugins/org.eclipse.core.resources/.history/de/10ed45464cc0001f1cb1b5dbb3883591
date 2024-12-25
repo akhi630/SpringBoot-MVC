@@ -1,0 +1,12 @@
+package com.sathya.springbootmvc.employeeRepositry;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.sathya.springbootmvc.employeeEntity.EmployeeEntity;
+
+public interface EmployeeRepositery {
+	public interface EmployeRepository extends JpaRepository<EmployeeEntity, Long>{
+		
+	}
+	
+}

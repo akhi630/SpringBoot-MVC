@@ -1,0 +1,12 @@
+package com.sathya.springbootmvc.repository;
+
+import org.springframework.stereotype.Repository;
+
+public interface Productrepository {
+	@Repository
+	public interface Productrepository extends JpaRepository<Productentity,long>
+	{
+		
+	}
+
+}

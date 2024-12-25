@@ -1,0 +1,50 @@
+package com.sathya.springbootmvc.Service;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sathya.springbootmvc.Model.EmployeeModel;
+import com.sathya.springbootmvc.employeeEntity.EmployeeEntity;
+import com.sathya.springbootmvc.employeeRepositry.EmployeeRepositry;
+import com.sathya.springbootmvc.entity.Productentity;
+
+public class EmployeeService {
+	@Autowired
+	public EmployeeEntity searchbyid(Long id) {
+		Optional<EmployeeEntity> optionalData=EmployeeRepositry.findbyid(id);
+		if(optionalData.isPresent())
+		{
+			Productentity product= optionalData.get();
+			return employee;
+	}
+		else
+		{
+			return null;
+		}
+	EmployeeRepositry employeeRepositry=EmployeeRepositry.findAll();
+	
+	return employee;
+}
+public void saveEmployeeDetails(EmployeeModel employeeModel)
+{
+	double hra;
+	hra=employeeModel.getHraper()*employeeModel.getSalary();
+	double da;
+	da=employeeModel.getDaper()*employeeModel.getSalary();
+	double finalsalary;
+	finalsalary=hra+da;
+	EmployeeEntity employeeEntity=new EmployeeEntity();
+	employeeEntity.setName(employeeModel.getName());
+	employeeEntity.setDept(employeeModel.getDept());
+	employeeEntity.setGender(employeeModel.getGender());
+	employeeEntity.setLocation(employeeModel.getLocation());
+	EmployeeEntity.setDa(da);
+	EmployeeEntity.setHra(hra);
+	EmployeeEntity.setFinalSalary(finalsalary);
+	EmployeeEntity.setSalary(employeeModel.getSalary());
+	
+	employeeRepositry.save(employeeEntity);
+	
+}
+}

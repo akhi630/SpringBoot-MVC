@@ -1,0 +1,26 @@
+package com.sathya.springbootmvc.employeeEntity;
+
+import jakarta.persistence.Entity;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
+public class EmployeeEntity {
+	private long id;
+	private String name;
+	private int department;
+	private String location;
+	private String salary;
+	private String gender;
+	
+	private double monthsalary;
+	private double basicsalary;
+	private double allowance;
+	private double bonus;
+	private double medicalinsurance;
+}

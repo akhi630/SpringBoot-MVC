@@ -1,0 +1,17 @@
+spring.application.name=sathya.employee.springboot
+server.port=8083
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=password
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+
+# Hibernate DDL (Database Definition Language) auto-generation (optional)
+spring.jpa.hibernate.ddl-auto=update
+
+# JPA Show SQL (Optional: To show SQL queries in the console)
+spring.jpa.show-sql=true
+
+# Enable the H2 Console (Web-based interface for interacting with the H2 database)
+spring.h2.console.enabled=true

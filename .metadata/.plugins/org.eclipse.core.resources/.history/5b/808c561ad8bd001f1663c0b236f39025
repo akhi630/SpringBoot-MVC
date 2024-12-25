@@ -1,0 +1,23 @@
+package com.sathya.springbootmvc.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Productentity {
+	private long id;
+	private String name;
+	private String brand;
+	private String madeIn;
+	private double price;
+	private int quantity;
+	private double discountrate;
+	private double offerprice;
+	private double taxprice;
+	private double finalprice;
+	private double stockvalue;
+
+}

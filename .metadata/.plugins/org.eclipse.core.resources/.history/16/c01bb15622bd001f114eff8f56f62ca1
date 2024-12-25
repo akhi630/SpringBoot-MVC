@@ -1,0 +1,10 @@
+package com.sathya.springbootmvc.model;
+
+public class Employeemodel {
+	private String name;
+	private int age;
+	private double salary;
+	private String department;
+	private String departure;
+
+}

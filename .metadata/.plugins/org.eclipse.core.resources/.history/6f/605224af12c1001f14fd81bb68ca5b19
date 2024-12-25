@@ -1,0 +1,19 @@
+spring.application.name=sathya.employee.springboot
+
+server.port=8083
+
+
+spring.datasource.url=jdbc:h2:mem:testdb
+spring.datasource.driverClassName=org.h2.Driver
+spring.datasource.username=sa
+spring.datasource.password=Akhila@123
+spring.jpa.database-platform=org.hibernate.dialect.H2Dialect
+
+
+spring.jpa.hibernate.ddl-auto=update
+
+# Enable SQL formatting for easier readability in logs
+spring.jpa.properties.hibernate.format_sql=true
+
+# Enable logging of executed SQL queries
+spring.jpa.properties.hibernate.show_sql=true

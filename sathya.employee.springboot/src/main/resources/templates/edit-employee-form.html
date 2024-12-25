@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>employee detailes</title>
+	</head>
+	<body>
+		<h1> Edit Employee form</h1>
+		<form th:action = "@{/saveeditemployee}" th:object="${employee}" method="post">
+			<label>name</label>
+				<input type="text" name="name" th:field="*{name}" required>
+				<br><br>
+				 <label>age</label>
+				 <input type="text" name="age" th:field="*{age}" required>
+				 <br><br>
+				 <label>department</label>
+				 <input type="text" name="department" th:field="*{department}" required>
+				 <br><br>
+				 <label>salary</label>
+				 <input type="text" name="salary" th:field="*{salary}" required>
+				 <br><br>
+				 <label>Location</label>
+				 <input type="text" name="location" th:field="*{location}" required>
+				 <br><br>
+				 <label>gender</label>
+				 <input type="text" name="gender" th:field="*{gender}"required>
+				 <br><br>
+				 <button type="submit">update details</button>	
+			</form> 	
+		</body>	
+	</html>
+		

@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>employee details</title>
+	</head>
+	<body>
+		<h1>Employee form</h1>
+		<form th:action = "@{/editemployeesave}" th:objects="${employee}" method="post">
+			<label>Id</label>
+			<input type="text" name="id" th:field= "*{id}" required>
+			<br><br>
+			<label>name</label>
+				<input type="text" name="name" th:field= "*{name}">
+				<br><br>
+				 <label>age</label>
+				 <input type="text" name="age" th:field= "*{age}">
+				 <br><br>
+				 <label>department</label>
+				 <input type="text" name="department" th:field= "*{department}">
+				 <br><br>
+				 <label>salary</label>
+				 <input type="text" name="salary" th:field= "*{salary}">
+				 <br><br>
+				 <label>Location</label>
+				 <input type="text" name="location" th:field= "*{location}">
+				 <br><br>
+				 <label>gender</label>
+				 <input type="text" name="gender" th:field= "*{gender}">
+				 <br><br>
+				 <button type="submit">update product</button>	
+			</form> 	
+		</body>	
+	</>
+		
